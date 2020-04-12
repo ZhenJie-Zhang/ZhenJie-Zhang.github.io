@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>ZhenJie-Zhang.github.io</title>
-    <link rel="Shortcut Icon" type="image/x-icon" href="./img/favicon.ico"/>
-  </head>
-  <body>
-    <h1>覺得厲害</h1>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>ZhenJie-Zhang.github.io</title>
+  <link rel="Shortcut Icon" type="image/x-icon" href="./img/favicon.ico" />
+  <style type="text/css">
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>覺得厲害</h1>
+  <form>
+    <input list="mylists">
+    <datalist id="mylists">
+      <option value="IE">
+      <option value="Firefox">
+      <option value="Google Chrome">
+      <option value="Safari">
+    </datalist>
+    <br>
+    <input type="color"><br>
+    <input type="email" name="email"><br>
+    <input type="number" min="1" max="5"><br>
+    <input type="text" name=firstname" value="Tom" readonly><br>
+    <input type="text" name=firstname" value="Tom" disabled><br>
+    <input type="text" name=firstname" value="Tom" size="90"><br>
+    <input type="text" name=firstname" value="Tom" maxlength="4"><br>
+  </form>
+  <article>
+    <h3>ZOO description</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesqu in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.
+    </p>
+  </article>
+  <br>
+  <hr>
+  <br>
+  <section>
+    <table style="width: 100%;">
+      <caption>My animals</caption>
+      <tr>
+        <th>Animal</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td>Lion</td>
+        <td>36</td>
+      </tr>
+      <tr>
+        <td>Elephant</td>
+        <td>25</td>
+      </tr>
+    </table>
+  </section>
+  <footer>
+    <form>
+      Email adddress:<br/>
+      <input type="email"  name="email" value="Email" placeholder="Please Enter Email"><br/>
+      Message:<br/>
+      <textarea rows="4" cols="50"></textarea><br/>
+    </form>
+    <p>&copy;2020 ZhenJie-Zhang.github.io All rights reserved.</p>
+  </footer>
+</body>
+
 </html>
