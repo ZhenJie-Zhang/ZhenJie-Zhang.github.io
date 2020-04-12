@@ -12,11 +12,29 @@
       border: 1px solid black;
       border-collapse: collapse;
     }
+
+    #headerTitle {
+      color: red;
+    }
+
+    .blueColor {
+      color: blue;
+    }
+
+    p.blueColor {
+      font-weight: bold;
+    }
+
+    .titleCenter{
+      text-align: center;
+    }
   </style>
 </head>
 
 <body>
-  <h1>覺得厲害</h1>
+  <header>
+    <h1 id="headerTitle">ZhenJie-Zhang's First Website</h1>
+  </header>
   <form>
     <input list="mylists">
     <datalist id="mylists">
@@ -35,8 +53,17 @@
     <input type="text" name=firstname" value="Tom" maxlength="4"><br>
   </form>
   <article>
-    <h3>ZOO description</h3>
-    <p>
+    <h3 class="blueColor titleCenter">ZOO description 1</h3>
+    <p class="blueColor">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesqu in porta lorem. Morbi condimentum est nibh,
+      et consectetur tortor feugiat at.
+    </p>
+  </article>
+  <br>
+  <hr>
+  <article>
+    <h3>ZOO description 2</h3>
+    <p class="blueColor">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesqu in porta lorem. Morbi condimentum est nibh,
       et consectetur tortor feugiat at.
     </p>
