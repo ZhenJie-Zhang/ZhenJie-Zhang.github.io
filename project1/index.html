@@ -16,8 +16,9 @@
         header {
             position: absolute;
             padding: 0 20px;
-            left: 50%;
-            transform: translate(-50%, 0)
+            z-index: 1;
+            /* left: 50%; */
+            /* transform: translate(-50%, 0) */
         }
 
         footer {
@@ -83,6 +84,62 @@
             transform: translate(-50%, -50%);
             animation: sunLight 3s infinite alternate;
         }
+
+        #earthOrbit {
+            height: 60vh;
+            width: 80vw;
+            border: 1px solid red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+
+        /* css3实现椭圆轨迹旋转 https://juejin.im/post/5cbbda4af265da039444a817 */
+        @keyframes revolutionX {
+            0% {
+                left: 0%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes revolutionY {
+            0% {
+                top: 0%;
+            }
+
+            100% {
+                top: 100%;
+            }
+        }
+
+        #earth {
+            background-image: url("./earth.gif");
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translate(-50%, -50%) rotate(23.5deg);
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            animation:
+                revolutionX 4s cubic-bezier(0.36, 0, 0.64, 1) -2s infinite alternate,
+                revolutionY 4s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate
+        }
+
+        .center-line {
+            position: absolute;
+            height: 120%;
+            top: 50%;
+            left: 50%;
+            border-left: 2px dotted #ff0000;
+            transform: translate(-50%, -50%);
+        }
     </style>
 </head>
 
@@ -91,7 +148,12 @@
         <h1 id="headerTitle">ZhenJie-Zhang's 閃爍星光</h1>
     </header>
     <div id="stars"></div>
-    <div id="sun""></div>
+    <div id="sun"></div>
+    <div id="earthOrbit">
+        <div id="earth" alt="earth" title="earth">
+            <div class="center-line"></div>
+        </div>
+    </div>
     <footer>
         <p>&copy;2020 ZhenJie-Zhang.github.io All rights reserved.</p>
     </footer>
