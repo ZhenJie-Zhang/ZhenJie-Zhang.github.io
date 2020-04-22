@@ -33,6 +33,7 @@
             background: radial-gradient(#555555, #000000);
             position: absolute;
             margin: 0;
+            overflow: hidden;
         }
 
         @keyframes starFlash {
@@ -127,6 +128,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
+            z-index: 1;
             animation:
                 revolutionX 4s cubic-bezier(0.36, 0, 0.64, 1) -2s infinite alternate,
                 revolutionY 4s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate
@@ -140,6 +142,59 @@
             border-left: 2px dotted #ff0000;
             transform: translate(-50%, -50%);
         }
+
+        #moomArea {
+            height: 15vh;
+            width: 20vw;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #moomOrbit {
+            height: 100%;
+            width: 100%;
+            transform: rotate3d(1, 0, 0, 60deg);
+            border-radius: 50%;
+            border: 2px solid darkgray;
+            border-top-width: 0;
+        }
+
+        @keyframes MoomRevolutionX {
+            0% {
+                left: 0%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes MoomRevolutionY {
+            0% {
+                top: 0%;
+            }
+
+            100% {
+                top: 50%;
+            }
+        }
+
+        #moom {
+            background-image: url(./moom.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            animation:
+                MoomRevolutionX 1s cubic-bezier(0.36, 0, 0.64, 1) -0.5s infinite alternate,
+                MoomRevolutionY 1s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate
+        }
     </style>
 </head>
 
@@ -152,6 +207,10 @@
     <div id="earthOrbit">
         <div id="earth" alt="earth" title="earth">
             <div class="center-line"></div>
+            <div id="moomArea">
+                <div id="moomOrbit"></div>
+                <div id="moom"></div>
+            </div>
         </div>
     </div>
     <footer>
