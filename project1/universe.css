@@ -1,0 +1,246 @@
+html, body {
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    position: absolute;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+footer {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+#universe {
+    background: radial-gradient(#555555, #000000);
+    position: absolute;
+    margin: 0;
+    overflow: hidden;
+}
+
+@-webkit-keyframes starFlash {
+    0% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.1;
+    }
+}
+
+@keyframes starFlash {
+    0% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.1;
+    }
+}
+
+#stars {
+    height: 100%;
+    background-image: url(./stars.png);
+    background-size: contain;
+    background-repeat: round;
+    -webkit-animation: starFlash 1s infinite alternate;
+    animation: starFlash 1s infinite alternate;
+}
+
+@-webkit-keyframes sunLight {
+    0% {
+        box-shadow: 0 0 55px 60px orange;
+    }
+    50% {
+        box-shadow: 0 0 55px 40px orange;
+    }
+    100% {
+        box-shadow: 0 0 55px 30px orange;
+    }
+}
+
+@keyframes sunLight {
+    0% {
+        box-shadow: 0 0 55px 60px orange;
+    }
+    50% {
+        box-shadow: 0 0 55px 40px orange;
+    }
+    100% {
+        box-shadow: 0 0 55px 30px orange;
+    }
+}
+
+#sun {
+    width: 100px;
+    height: 100px;
+    background: orange;
+    border-radius: 50%;
+    box-shadow: 0 0 55px 60px orange;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-animation: sunLight 3s infinite alternate;
+    animation: sunLight 3s infinite alternate;
+}
+
+#earthOrbit {
+    height: 60vh;
+    width: 80vw;
+    border: 1px solid red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+/* css3实现椭圆轨迹旋转 https://juejin.im/post/5cbbda4af265da039444a817 */
+
+@-webkit-keyframes revolutionX {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes revolutionX {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@-webkit-keyframes revolutionY {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes revolutionY {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+#earth {
+    background-image: url("./earth.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-transform: translate(-50%, -50%) rotate(23.5deg);
+    transform: translate(-50%, -50%) rotate(23.5deg);
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    -webkit-animation: revolutionX 4s cubic-bezier(0.36, 0, 0.64, 1) -2s infinite alternate, revolutionY 4s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate;
+    animation: revolutionX 4s cubic-bezier(0.36, 0, 0.64, 1) -2s infinite alternate, revolutionY 4s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate
+}
+
+.center-line {
+    position: absolute;
+    height: 120%;
+    top: 50%;
+    left: 50%;
+    border-left: 2px dotted #ff0000;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#moomArea {
+    height: 15vh;
+    width: 20vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#moomOrbit {
+    height: 100%;
+    width: 100%;
+    -webkit-transform: rotate3d(1, 0, 0, 60deg);
+    transform: rotate3d(1, 0, 0, 60deg);
+    border-radius: 50%;
+    border: 2px solid darkgray;
+    border-top-width: 0;
+}
+
+@-webkit-keyframes MoomRevolutionX {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes MoomRevolutionX {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@-webkit-keyframes MoomRevolutionY {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+@keyframes MoomRevolutionY {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+#moom {
+    background-image: url(./moom.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%);
+    -webkit-animation: MoomRevolutionX 1s cubic-bezier(0.36, 0, 0.64, 1) -0.5s infinite alternate, MoomRevolutionY 1s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate;
+    animation: MoomRevolutionX 1s cubic-bezier(0.36, 0, 0.64, 1) -0.5s infinite alternate, MoomRevolutionY 1s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate
+}
