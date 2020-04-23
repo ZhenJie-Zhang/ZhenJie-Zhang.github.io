@@ -5,7 +5,7 @@ html, body {
     overflow: hidden;
 }
 
-header {
+#headerTitle {
     position: absolute;
     padding: 0 20px;
     z-index: 1;
