@@ -6,9 +6,20 @@
     <title>ZhenJie-Zhang's eBay</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="Shortcut Icon" type="image/x-icon" href="../img/favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <style type="text/css">
+        footer {
+            font-size: xx-small;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+        }
+
         .container {
+            display: flex;
+            justify-content: space-between;
             width: 1200px;
             margin: auto;
         }
@@ -16,6 +27,17 @@
         .navibar {
             list-style-type: none;
             font-size: 12px;
+        }
+
+        .navibar-right {
+            position: absolute;
+            right: 1px;
+            list-style-type: none;
+            font-size: 12px;
+        }
+
+        a:visited {
+            color: inherit;
         }
 
         li.naviItem {
@@ -34,6 +56,26 @@
             color: #0654BA;
         }
 
+        #signin-style>a {
+            color: #0654BA;
+        }
+
+        #signin-style>a {
+            color: #0654BA;
+            padding: 0;
+        }
+
+        #signin-style>a:last-child {
+            padding-right: 16px;
+        }
+
+        .float-right {
+            float: right;
+        }
+
+        .no-border {
+            border: none !important;
+        }
     </style>
 </head>
 
@@ -42,18 +84,21 @@
     <header>
         <div class="container">
             <ul class="navibar">
-                <li class="naviItem">Hi! <a href="#">Sign in</a> or <a href="#">Register</a></li>
+                <li id="signin-style" class="naviItem">Hi! <a href="#">Sign in</a> or <a href="#">Register</a></li>
                 <li class="naviItem"><a href="#">Daily Deals</a></li>
                 <li class="naviItem"><a href="#">Sell</a></li>
                 <li class="naviItem"><a href="#">Help & Contact</a></li>
-                <li class="naviItem">
+            </ul>
+            <ul class="navibar">
+                <li id="cart" class="naviItem no-border"><a href="#">My eBay</a></li>
+                <li id="alert" class="naviItem no-border">
                     <a href="#">
-                        <i class="fa fa-bell" aria-hidden="true"></i>
+                        <i class="fas fa-bell" aria-hidden="true"></i>
                     </a>
                 </li>
-                <li class="naviItem">
+                <li class="naviItem no-border">
                     <a href="#">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <i class="fas fa-shopping-cart" aria-hidden="true" title="您的購物車"></i>
                     </a>
                 </li>
             </ul>
