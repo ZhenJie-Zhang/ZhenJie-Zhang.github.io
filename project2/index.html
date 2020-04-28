@@ -8,8 +8,17 @@
     <link rel="Shortcut Icon" type="image/x-icon" href="../img/favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <style type="text/css">
+        body {
+            margin: auto 0;
+        }
+
+        header {
+            box-shadow: 0 3px 5px #cccccc;
+            margin: 0;
+        }
+
         footer {
-            font-size: xx-small;
+            font-size: 12px;
             position: absolute;
             bottom: 0;
             left: 50%;
@@ -19,9 +28,12 @@
 
         .container {
             display: flex;
-            justify-content: space-between;
             width: 1200px;
             margin: auto;
+        }
+
+        .space-between {
+            justify-content: space-between;
         }
 
         .navibar {
@@ -76,13 +88,58 @@
         .no-border {
             border: none !important;
         }
+
+        #cart {
+            margin-top: -5px;
+            padding: 0 15px 0 25px;
+        }
+
+        #alert {
+            margin-top: -5px;
+            padding: 0 15px 0 25px;
+        }
+
+        #shopping-button {
+            height: 30px;
+            width: 75px;
+            display: flex;
+            justify-content: space-between;
+            background-color: unset;
+            border: unset;
+            margin: auto 0;
+        }
+
+        #shopping-button:hover {
+            color: #0654BA;
+            border: unset;
+        }
+
+        #shopping-button:focus {
+            outline: unset;
+            border-top: 2px solid #0654BA;
+        }
+
+        #shopping-button>p,
+        #shopping-button>.fa-sort-down {
+            margin: auto;
+        }
+
+        form{
+            margin: auto 0;
+        }
+
+        #search-field {
+            height: 2em;
+        }
+
+        #search-bar {}
     </style>
 </head>
 
 <body>
     <!-- Header -->
     <header>
-        <div class="container">
+        <div class="container space-between">
             <ul class="navibar">
                 <li id="signin-style" class="naviItem">Hi! <a href="#">Sign in</a> or <a href="#">Register</a></li>
                 <li class="naviItem"><a href="#">Daily Deals</a></li>
@@ -93,12 +150,12 @@
                 <li id="cart" class="naviItem no-border"><a href="#">My eBay</a></li>
                 <li id="alert" class="naviItem no-border">
                     <a href="#">
-                        <i class="fas fa-bell" aria-hidden="true"></i>
+                        <i class="fas fa-bell fa-lg" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li class="naviItem no-border">
                     <a href="#">
-                        <i class="fas fa-shopping-cart" aria-hidden="true" title="您的購物車"></i>
+                        <i class="fas fa-shopping-cart fa-lg" aria-hidden="true" title="您的購物車"></i>
                     </a>
                 </li>
             </ul>
@@ -107,6 +164,30 @@
 
     </header>
     <!-- Header End -->
+    <!-- Search From -->
+    <div id="search-bar">
+        <div class="container">
+            <img id="brand" src="./brand.png" alt="eBay" height="55px" />
+            <button id="shopping-button" type="button">
+                <p>Shop by category</p>
+                <i class="fas fa-sort-down" aria-hidden="true"></i>
+            </button>
+            <form>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" name="search-content" id="search-field"
+                                placeholder="Search for anything">
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!-- Serach From End -->
     <footer>
         <p>&copy; 2020 ZhenJie-Zhang.github.io All rights reserved.</p>
     </footer>
